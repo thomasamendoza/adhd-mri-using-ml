@@ -26,17 +26,17 @@ test_df = pd.read_csv(TESTLABELSPATH)
 class VideoDataset(Dataset):
     def __init__(self, paths,labels):
         self.paths = paths
-        self.labsels = labels
+        self.labels = labels
     
     def __len__(self):
         return len(self.paths)
 
     def __getitem__(self,x):
         path = self.paths[x]
-        label = self.labsels[x]
+        label = self.labels[x]
         
-        # TODO: implement method of loading video frames
         frames = torch.tensor(load_frames(path))
+        frames = frames.float()
 
         return frames, label
     
@@ -85,14 +85,20 @@ class VideoClassifier(nn.Module):
         x = x.view(-1, 256*4*4*4)
 
         x = F.relu(self.FC1(x))
-        x = self.fc2(x)
+        x = self.FC2(x)
         return x
     
-traindataset = VideoDataset(TRAINPATH, train_df)
+train_video_paths = train_df['video_name'].values
+train_labels = train_df['tag'].values
+
+test_video_paths = test_df['video_name'].values
+test_labels = test_df['tag'].values
+
+traindataset = VideoDataset(train_video_paths, train_labels)
 traindataloader = DataLoader(traindataset, batch_size=32, shuffle=True)
 
-testdataset = VideoDataset(TESTPATH, test_df)
-testdataloader = DataLoader(testdataset, batch_size=32, shuffle=True)
+testdataset = VideoDataset(test_video_paths, test_labels)
+testdataloader = DataLoader(testdataset, batch_size=32, shuffle=False)
 
 model = VideoClassifier(NUMCLASSES)
 optimizer = optim.Adam(model.parameters(), lr=0.001)
