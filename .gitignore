@@ -1,10 +1,12 @@
 #VSCode generated directories
 /.DS_Store
 /week4/.DS_Store
+/week7/.DS_Store
 
 # download dataset for week4 cats & dogs classifier: https://www.kaggle.com/datasets/tongpython/cat-and-dog
 # CIFAR-10 dataset available through pytorch
 /week4/archive
 /week6/data/
+/week7/UCF101Dataset/
 
 requirements.txt
