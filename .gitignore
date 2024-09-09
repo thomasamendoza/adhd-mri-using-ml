@@ -2,10 +2,14 @@
 /.DS_Store
 Summer-Research-Institute/week4/.DS_Store
 Summer-Research-Institute/week7/.DS_Store
+Summer-Research-Institute/.DS_Store
 
 # download dataset for week4 cats & dogs classifier: https://www.kaggle.com/datasets/tongpython/cat-and-dog
 # CIFAR-10 dataset available through pytorch
+# MRI data available through NITRC website: https://www.nitrc.org/frs/?group_id=383
 Summer-Research-Institute/week4/archive
 Summer-Research-Institute/week6/data/
 Summer-Research-Institute/week7/UCF101Dataset/
-Summer-Research-Institute/.DS_Store
+Summer-Research-Institute/week2/anat.nii.gz
+Summer-Research-Institute/week2/func.nii.gz
+
