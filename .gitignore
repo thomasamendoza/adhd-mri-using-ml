@@ -16,3 +16,6 @@ Summer-Research-Institute/week2/anat.nii.gz
 Summer-Research-Institute/week2/func.nii.gz
 data/fmri/*
 data/mri/*
+
+# outputs for slices from demos
+/outputs/demos/*
