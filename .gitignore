@@ -21,5 +21,7 @@ data/mri/*
 # outputs for slices from demos
 /outputs/demos/*
 /outputs/slice-outputs/*
+/NILEARN-GLM/results/*
+
 
 /models/
